@@ -19,7 +19,7 @@ function LoginPage(props) {
     setRememberMe(!rememberMe)
   };
 
-  const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
+  const initialEmail = localStorage.getItem("rememberMe") !== 'undefined' ? localStorage.getItem("rememberMe") : '';
 
   return (
     <Formik
@@ -83,7 +83,6 @@ function LoginPage(props) {
 
             <Title level={2}>Log In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
-
               <Form.Item required>
                 <Input
                   id="email"
