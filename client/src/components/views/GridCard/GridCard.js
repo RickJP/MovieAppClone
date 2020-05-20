@@ -13,7 +13,7 @@ function GridCard(props) {
     )
   } else {
 
-  }
+  
 
   return (
     <Col lg={6} md={8} xs={24}>
@@ -24,6 +24,7 @@ function GridCard(props) {
       </div>
     </Col>
   )
+}
 }
 
 export default GridCard

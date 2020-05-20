@@ -7,8 +7,6 @@ import {Typography, Row} from 'antd';
 const {Title} = Typography;
 
 
-
-
 function LandingPage() {
 
   const [movies, setMovies] = useState([]);
@@ -24,7 +22,6 @@ function LandingPage() {
     fetch(url)
     .then((res) => res.json())
     .then((res) => {
-      console.log(res);
       setMovies([...movies, ...res.results])
       setCurrentPage(currentPage + 1)
     });
@@ -38,11 +35,12 @@ function LandingPage() {
   return (
     <div style={{width: '100%', margin: 0}}>
 
-      {movies[1] && 
-         <MainImage image={`${IMAGE_URL}w780/${movies[1].backdrop_path}`} title={`${movies[1].original_title}`} text={`${movies[1].overview}`}/>       
+      {/* Backdrop */}
+      {movies[0] && 
+         <MainImage image={`${IMAGE_URL}w780/${movies[0].backdrop_path}`} title={`${movies[0].original_title}`} text={`${movies[0].overview}`}/>       
       }
 
-      
+      {/* Movie Grid Images */}
       <div style={{width: '85%', margin: '1rem auto'}}>
         <Title level={2}>Movies By Latest</Title>
         <hr />
@@ -53,6 +51,8 @@ function LandingPage() {
             </React.Fragment>
           ))}
         </Row>
+
+
 
         <br />
         <div style={{ display:'flex', justifyContent:'center'}}>
