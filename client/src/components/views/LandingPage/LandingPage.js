@@ -41,6 +41,8 @@ function LandingPage() {
       {movies[1] && 
          <MainImage image={`${IMAGE_URL}w780/${movies[1].backdrop_path}`} title={`${movies[1].original_title}`} text={`${movies[1].overview}`}/>       
       }
+
+      
       <div style={{width: '85%', margin: '1rem auto'}}>
         <Title level={2}>Movies By Latest</Title>
         <hr />
